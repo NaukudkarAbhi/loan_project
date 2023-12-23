@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>LOAN APPROVED OR DECLINE</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="Married" placeholder="Married" required="required" /><br>
+    	<input type="text" name="Dependents" placeholder="Dependents" required="required" /><br>
+        <input type="text" name="Education" placeholder="Education" required="required" /><br>
+        <input type="text" name="Self_Employed" placeholder="Self_Employed" required="required" /><br>
+        <input type="text" name="ApplicantIncome" placeholder="ApplicantIncome" required="required" /><br>
+        <input type="text" name="CoapplicantIncome" placeholder="CoapplicantIncome" required="required" /><br>
+        <input type="text" name="LoanAmount" placeholder="LoanAmount" required="required" /><br>
+        <input type="text" name="Loan_Amount_Term" placeholder="Loan_Amount_Term" required="required" /><br>
+        <input type="text" name="Credit_History" placeholder="Credit_History" required="required" /><br>
+        <input type="text" name="Property_Area" placeholder="Property_Area" required="required" /><br>
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
